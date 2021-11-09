@@ -28,6 +28,7 @@ public class Controller {
 			int tamanio = Integer.parseInt(vista.escritura("Ingrese el tamaño de la matriz:\n"));
 			int[][] matriz = new int[tamanio][tamanio];
 			int[][] matriz2 = new int[tamanio][tamanio];
+			int inf=9999;
 
 			vista.mostrar("Ingrese los datos:\n");
 			for (int i = 0; i < tamanio; i++) {
@@ -40,8 +41,12 @@ public class Controller {
 
 			for (int i = 0; i < tamanio; i++) {
 				for (int j = 0; j < tamanio; j++) {
-					System.out.print(matriz2[i][j]);
+					 if (matriz2[i][j] == 99)
+				          System.out.print("INF ");
+				        else
+					System.out.print(matriz2[i][j]+" ");
 				}
+			    System.out.println("\n");
 			}
 
 			break;
