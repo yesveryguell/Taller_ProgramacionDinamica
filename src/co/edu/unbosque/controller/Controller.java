@@ -27,26 +27,26 @@ public class Controller {
 		case 1:
 			int tamanio = Integer.parseInt(vista.escritura("Ingrese el tamaño de la matriz:\n"));
 			int[][] matriz = new int[tamanio][tamanio];
-			int[][] matriz2 = new int[tamanio][tamanio];
-			int inf=9999;
+			int[][] m = new int[tamanio][tamanio];
+			int inf = 9999;
 
-			vista.mostrar("Ingrese los datos:\n");
+			vista.mostrar("Ingrese los datos:");
 			for (int i = 0; i < tamanio; i++) {
 				for (int j = 0; j < tamanio; j++) {
 					matriz[i][j] = Integer.parseInt(vista.escritura(""));
 				}
 			}
-			
-			matriz2 = algo.floydWarshall(matriz, tamanio);
+
+			m = algo.floydWarshall(matriz, tamanio);
 
 			for (int i = 0; i < tamanio; i++) {
 				for (int j = 0; j < tamanio; j++) {
-					 if (matriz2[i][j] == 99)
-				          System.out.print("INF ");
-				        else
-					System.out.print(matriz2[i][j]+" ");
+					if (m[i][j] == 99)
+						System.out.print("INF ");
+					else
+						System.out.print(m[i][j] + " ");
 				}
-			    System.out.println("\n");
+				System.out.println("\n");
 			}
 
 			break;
@@ -55,12 +55,31 @@ public class Controller {
 			break;
 
 		case 3:
+
+			int tamanio3 = Integer.parseInt(vista.escritura("Ingrese el tamaño del arreglo:"));
+			int[] arreglo = new int[tamanio3];
+
+			vista.mostrar("Ingrese los datos:");
+			for (int i = 0; i < tamanio3; i++) {
+				arreglo[i] = Integer.parseInt(vista.escritura(""));
+			}
+			int prueba = algo.MatrixChainOrder(arreglo, tamanio3);
+			vista.mostrar("" + prueba);
+
 			break;
 
 		case 4:
 			break;
 
 		case 5:
+
+			int n = Integer.parseInt(vista.escritura("Ingrese el tamaño para el coeficiente numero 1:"));
+			int k = Integer.parseInt(vista.escritura("Ingrese el tamaño para el coeficiente numero 2:"));
+
+			int resultado = algo.binomialCoeff(n, k);
+
+			vista.mostrar("" + resultado);
+
 			break;
 
 		}

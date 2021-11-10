@@ -29,7 +29,7 @@ public class Algoritmos {
 	}
 
 	// Multiplicación de matrices
-	static int MatrixChainOrder(int p[], int n) {
+	public int MatrixChainOrder(int p[], int n) {
 
 		int m[][] = new int[n][n];
 
