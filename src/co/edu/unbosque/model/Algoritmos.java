@@ -59,28 +59,18 @@ public class Algoritmos {
 	}
 
 	// Asignación de tareas
-	
-	static int max(int x, int y){
-	    return (x > y ? x : y);
-	}
 	public int maxTasks(int[] high, int[] low, int n) {
 
-		// An array task_dp that stores the maximum
-	    // task done
 	    int[] task_dp = new int[n + 1];
 	 
-	    // If n = 0, no solution exists
 	    task_dp[0] = 0;
 	 
-	    // If n = 1, high effort task on that day will
-	    // be the solution
 	    task_dp[1] = high[0];
 	 
-	    // Fill the entire array determining which
-	    // task to choose on day i
-	    for (int i = 2; i <= n; i++)
+	    for (int i = 2; i <= n; i++) {
 	        task_dp[i] = Math.max(high[i - 1] + task_dp[i - 2],
 	                        low[i - 1] + task_dp[i - 1]);
+	    }
 	    return task_dp[n];
 	}
 	
