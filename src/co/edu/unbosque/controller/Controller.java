@@ -69,6 +69,27 @@ public class Controller {
 			break;
 
 		case 4:
+
+			int dias = Integer.parseInt(vista.escritura("Ingrese el número de días:"));
+			int[] high = new int[dias];
+			int[] low = new int[dias];
+			vista.mostrar("Ingrese el número highs:");
+			for (int i = 0; i < high.length; i++) {
+				high[i] = Integer.parseInt(vista.escritura(""));
+			}
+
+			vista.mostrar("Finalizó el highs");
+
+			vista.mostrar("Ingrese el número lows:");
+			for (int j = 0; j < low.length; j++) {
+				low[j] = Integer.parseInt(vista.escritura(""));
+			}
+			vista.mostrar("Finalizó el highs");
+
+			int tareas = algo.maxTasks(high, low, dias);
+
+			vista.mostrar("" + tareas);
+
 			break;
 
 		case 5:
