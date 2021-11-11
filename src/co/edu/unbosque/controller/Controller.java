@@ -94,30 +94,30 @@ public class Controller {
 
 				String n1 = vista.escritura("Escriba el número de las ciudades: ");
 				try {
+					int i ;
 					if (vista.exceptionNumber(n1)) {
 						int n = Integer.parseInt(n1);
 						int[][] c = new int[n][n];
 						int[] tour = new int[10];
 
 						vista.mostrar("Escriba el costo de las ciudades: ");
-						for (int i = 0; i < n; i++) {
+						if (n == 1)
+						{
+							System.out.println("Path is not possible!");
+						}
+						for (i = 1; i < n; i++) {
+							tour[i] = i;
+						}
+
+						for ( i = 0; i < n; i++) {
 							for (int j = 0; j < n; j++) {
 								c[i][j] = Integer.parseInt(vista.escritura(""));
 							}
 						}
-						for (int i = 0; i < n; i++) {
-							tour[i] = i;
-						}
-
+						
 						int result = algo.tspdp(c, tour, 1, n);
 
-						vista.mostrar("El tour más optimo es: ");
-						for (int i = 1; i <= n; i++) {
-
-							System.out.print(tour[i] + " -> ");
-						}
-
-						vista.mostrar("1");
+						
 
 						vista.mostrar("El costo mínimo es: " + result + "\n");
 					}
