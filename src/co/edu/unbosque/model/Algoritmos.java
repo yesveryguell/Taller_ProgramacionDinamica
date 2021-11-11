@@ -1,14 +1,38 @@
+/**
+ * Paquete donde se encuentra la clase.
+ */
 package co.edu.unbosque.model;
 
+/**
+ * Clase de Algoritmos, en esta clase están los diferentes métodos que se
+ * pidieron para realizar el programa.
+ * 
+ * @authors Santiago Porras Sepúlveda, Juan Felipe Rojas Rodríguez
+ *
+ */
 public class Algoritmos {
-
+	/**
+	 * variable estática INF de tipo int.
+	 */
 	private final static int INF = 9999;
 
+	/**
+	 * Constructor vacío de la clase Algoritmos, para hacer uso de los métodos que
+	 * hay en la clase.
+	 */
 	public Algoritmos() {
 
 	}
 
-	// Algoritmo de Floyd
+	/**
+	 * Método de tipo int que aloja una matriz, este es el algortimo de Floyd, donde
+	 * le pasan una matriz y un tamaño para esa matriz.
+	 * 
+	 * @param graph es de tipo int que aloja matriz. graph != 0.
+	 * @param v     es el tamaño de la matriz de tipo entero. v != 0.
+	 * @return una matriz con los valores generados dentro del método, con una
+	 *         solución realizada.
+	 */
 	public int[][] floydWarshall(int graph[][], int v) {
 		int matrix[][] = new int[v][v];
 		int i, j, k;
@@ -29,7 +53,15 @@ public class Algoritmos {
 		return matrix;
 	}
 
-	// Multiplicación de matrices
+	/**
+	 * Método de tipo int, este es el algoritmo para la multiplicación de matrices,
+	 * donde se pasan dos parámetros, un arreglo con los datos para realizar la
+	 * multiplicación y la vaiable del tamaño.
+	 * 
+	 * @param p es de tipo entero que tiene un arreglo. p != 0.
+	 * @param n es el tamaño del arregllo de tipo int. n != 0.
+	 * @return El valor de la multiplicación que se realizó en las matrices.
+	 */
 	public int MatrixChainOrder(int p[], int n) {
 
 		int m[][] = new int[n][n];
@@ -58,7 +90,17 @@ public class Algoritmos {
 		return m[1][n - 1];
 	}
 
-	// Asignación de tareas
+	/**
+	 * Método de tipo int, este método es el algoritmo de asiganción de tareas que
+	 * realiza los procedimientos con los parámetros que recibe, las tareas mayores
+	 * y las menores, juento con ello el tamaño del arreglo.
+	 * 
+	 * @param high es de tipo int siendo un arreglo. high != 0.
+	 * @param low  es de tipo int siendo un arreglo. low != 0.
+	 * @param n    es el tamaño del arreglo para realizar el arreglo de la tarea. n
+	 *             != 0.
+	 * @return El valor total de las tareas realizadas.
+	 */
 	public int maxTasks(int[] high, int[] low, int n) {
 
 		int[] task_dp = new int[n + 1];
@@ -73,7 +115,14 @@ public class Algoritmos {
 		return task_dp[n];
 	}
 
-	// Coeficiente binomial
+	/**
+	 * Método de tipo int, este es el algoritmo de coeficiente binomial, este pasa
+	 * dos parámetros, los cuales son para la fórmula a realizar.
+	 * 
+	 * @param n es de tipo int que es el primer coeficiente.
+	 * @param k es de tipo int que es el segundo coeficiente.
+	 * @return El valor de la operación realizada.
+	 */
 	public int binomialCoeff(int n, int k) {
 		int C[][] = new int[n + 1][k + 1];
 		for (int i = 0; i <= n; i++) {
@@ -89,11 +138,28 @@ public class Algoritmos {
 		return C[n][k];
 	}
 
+	/**
+	 * Método para obtener el mínimo número de dos valores.
+	 * 
+	 * @param a es de tipo int.
+	 * @param b es de tipo int.
+	 * @return El valor mínimo entre los dos números.
+	 */
 	public int min(int a, int b) {
 		return (a < b) ? a : b;
 	}
-	
-	//Viajero
+
+	/**
+	 * Método de tipo int, este es el algoritmo del problema del viajero, eel cuál
+	 * recibe la cantidad de ciudades, la cantidad de tour que se realiza, desde
+	 * donde empieza y el tamaño que tendrá la matriz.
+	 * 
+	 * @param c matriz de tipo int el cuál será la cantidad de ciudades. c != 0.
+	 * @param tour es un arreglo de tipo int.
+	 * @param start es una variable de tipo int. start != 0.
+	 * @param n es el tamaño del arreglo de tipo int. n != 0.
+	 * @return El valor del cálculo realizado del viajero.
+	 */
 	public int tspdp(int c[][], int tour[], int start, int n) {
 
 		int mintour[] = new int[10], temp[] = new int[10], mincost = 999, ccost, i, j, k;

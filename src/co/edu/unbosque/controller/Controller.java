@@ -1,13 +1,33 @@
+/**
+ * Paquete donde se encuentra la clase.
+ */
 package co.edu.unbosque.controller;
 
 import co.edu.unbosque.model.Algoritmos;
 import co.edu.unbosque.view.Vista;
 
+/**
+ * Clase de Controller, donde unimos la vista con los métodos que hay en el
+ * modelo, en este caso los algoritmos a realizar.
+ * 
+ * @authors Santiago Porras Sepúlveda, Juan Felipe Rojas Rodríguez
+ *
+ */
 public class Controller {
 
+	/**
+	 * vista de tipo Vista.
+	 */
 	private Vista vista;
+	/**
+	 * algo de tipo Algoritmos.
+	 */
 	private Algoritmos algo;
 
+	/**
+	 * Constructor de la clase Controller en donde se inicializan las clases que
+	 * tenemos como atributos.
+	 */
 	public Controller() {
 		algo = new Algoritmos();
 		vista = new Vista();
@@ -15,6 +35,9 @@ public class Controller {
 		ejecutar();
 	}
 
+	/**
+	 * Método para ejecutar los métodos que hay en el modelo con la vista.
+	 */
 	public void ejecutar() {
 
 		int decision = 0;
